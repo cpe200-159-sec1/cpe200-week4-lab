@@ -1,39 +1,62 @@
 package cpe200;
 
+import java.math.BigDecimal;
+import java.math.MathContext;
+import java.math.RoundingMode;
+
+/**
+ * Created by pruet on 5/9/2559.
+ */
 
 public class BinaryCalculator {
-    public Operand firstOperand;
-    public Operand secondOperand;
+    private BigDecimal firstOperand;
+    private BigDecimal secondOperand;
 
     public BinaryCalculator() {
+        firstOperand = BigDecimal.ZERO;
+        secondOperand = BigDecimal.ZERO;
     }
 
     public void setFirstOperand(Operand operand) {
+        firstOperand = new BigDecimal(operand.operand);
     }
 
 
     public void setSecondOperand(Operand operand) {
+        secondOperand = new BigDecimal(operand.operand);
     }
 
     public String add() {
-        return null;
+        return firstOperand.add(secondOperand)
+                .stripTrailingZeros().toString();
     }
 
     public String subtract() {
-        return null;
+        return firstOperand.subtract(secondOperand)
+                .stripTrailingZeros().toString();
     }
 
     public String multiply() {
-        return null;
+        return firstOperand.multiply(secondOperand)
+                .stripTrailingZeros().toString();
     }
 
     /* This method should throw an exception when divide by zero */
-    public String division() throws ArithmeticException {
-        return null;
+    public String division() {
+        if (secondOperand.equals(0))
+            throw new RuntimeException("divider must not be zero");
+
+        return firstOperand.divide(secondOperand, 5, RoundingMode.HALF_UP)
+                .stripTrailingZeros().toString();
     }
+
 
     public String power() {
-        return null;
+        return BigDecimal.valueOf(
+                Math.pow(
+                        firstOperand.doubleValue(),
+                        secondOperand.doubleValue()
+                )
+        ).stripTrailingZeros().toString();
     }
-
 }
