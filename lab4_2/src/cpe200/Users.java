@@ -20,8 +20,7 @@ public class Users {
         User user = new User();
         user.setUserName(userName);
         user.setPassword(password);
-        if (user != null)
-            userList.add(user);
+        userList.add(user);
     }
 
     public void deleteUser(User user) {
