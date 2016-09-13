@@ -1,5 +1,6 @@
 package cpe200;
 
+import javax.jws.soap.SOAPBinding;
 import java.util.ArrayList;
 
 /**
@@ -10,36 +11,62 @@ public class Users {
 
     public void addUser(User user)
     {
+        userList.add(user);
     }
 
     public void addUser(String userName, String password)
     {
+        userList.add(new User(userName,password));
     }
 
     public void deleteUser(User user)
     {
-
+        for (User i:userList)
+        {
+            if (i.equals(user)) {
+                userList.remove(i);
+            }
+        }
     }
 
     public boolean exists(User user)
     {
-        return false;
+        return userList.contains(user);
     }
 
     public boolean usernameExists(String username)
     {
+        for (User i:userList)
+        {
+            if (i.getUserName().equals(username))
+            {
+                return true;
+            }
+        }
         return false;
     }
 
     /* This method should return null when the user with username is not in the list */
     public User getUserByUsername(String userName)
     {
+        for (User i : userList)
+        {
+            if (i.getUserName().equals(userName))
+            {
+                return i;
+            }
+        }
         return null;
     }
 
     public int count()
     {
-        return 0;
+        int c=0;
+        for(User i:userList)
+        {
+            c++;
+        }
+        return c;
     }
 
     public User[] getUserArray()
