@@ -7,7 +7,7 @@ import java.util.ArrayList;
  * Created by pruet on 12/9/2559.
  */
 public class Users {
-    public ArrayList<User> userList;
+    public ArrayList<User> userList = new ArrayList<User>();
 
     public void addUser(User user)
     {
@@ -21,12 +21,7 @@ public class Users {
 
     public void deleteUser(User user)
     {
-        for (User i:userList)
-        {
-            if (i.equals(user)) {
-                userList.remove(i);
-            }
-        }
+        userList.remove(user);
     }
 
     public boolean exists(User user)
@@ -71,6 +66,8 @@ public class Users {
 
     public User[] getUserArray()
     {
-        return null;
+        return userList.toArray(new User[userList.size()]);
+
     }
 }
+
