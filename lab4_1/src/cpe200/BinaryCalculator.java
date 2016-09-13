@@ -13,8 +13,8 @@ public class BinaryCalculator {
     private BigDecimal secondOperand;
 
     public BinaryCalculator() {
-        firstOperand = new BigDecimal(0);
-        secondOperand = new BigDecimal(0);
+        firstOperand = BigDecimal.ZERO;
+        secondOperand = BigDecimal.ZERO;
     }
 
     public void setFirstOperand(Operand operand) {
@@ -52,11 +52,11 @@ public class BinaryCalculator {
 
 
     public String power() {
-        return new BigDecimal(String.valueOf(
+        return BigDecimal.valueOf(
                 Math.pow(
                         firstOperand.doubleValue(),
                         secondOperand.doubleValue()
                 )
-        )).stripTrailingZeros().toString();
+        ).stripTrailingZeros().toString();
     }
 }
