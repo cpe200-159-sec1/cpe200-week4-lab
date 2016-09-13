@@ -4,7 +4,7 @@ package cpe200;
  * Created by pruet on 5/9/2559.
  */
 public class Operand {
-    private String operand;
+    protected String operand;
 
     public Operand(String operand)
     {
@@ -21,7 +21,4 @@ public class Operand {
         this.operand = Double.toString(operand);
     }
 
-    public String getOperand() {
-        return operand;
-    }
 }

@@ -18,12 +18,12 @@ public class BinaryCalculator {
     }
 
     public void setFirstOperand(Operand operand) {
-        firstOperand = new BigDecimal(operand.getOperand());
+        firstOperand = new BigDecimal(operand.operand);
     }
 
 
     public void setSecondOperand(Operand operand) {
-        secondOperand = new BigDecimal(operand.getOperand());
+        secondOperand = new BigDecimal(operand.operand);
     }
 
     public String add() {

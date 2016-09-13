@@ -13,7 +13,7 @@ import static org.junit.Assert.*;
 
 public class BinaryCalculatorTest {
     Operand firstOperand;
-    Operand secondOperand;w
+    Operand secondOperand;
     BinaryCalculator binaryCalculator;
 
     @Before
