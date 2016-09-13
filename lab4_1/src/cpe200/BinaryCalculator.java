@@ -54,9 +54,8 @@ public class BinaryCalculator {
     public String power() {
         return new BigDecimal(String.valueOf(
                 Math.pow(
-                        Double.parseDouble(firstOperand.toString()),
-                        Double.parseDouble(secondOperand.toString()
-                        )
+                        firstOperand.doubleValue(),
+                        secondOperand.doubleValue()
                 )
         )).stripTrailingZeros().toString();
     }
