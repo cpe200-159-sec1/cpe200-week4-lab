@@ -2,21 +2,23 @@ package cpe200;
 
 
 public class BinaryCalculator {
-    public Operand firstOperand;
-    public Operand secondOperand;
+    private Operand firstOperand;
+    private Operand secondOperand;
 
     public BinaryCalculator() {
     }
 
     public void setFirstOperand(Operand operand) {
+        this.firstOperand = operand;
     }
 
 
     public void setSecondOperand(Operand operand) {
+        this.secondOperand = operand;
     }
 
     public String add() {
-        return null;
+        return Double.toString(Double.parseDouble(firstOperand.getOperand()) + Double.parseDouble(secondOperand.getOperand())).replaceAll(".0","");
     }
 
     public String subtract() {
