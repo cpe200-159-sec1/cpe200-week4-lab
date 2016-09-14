@@ -18,6 +18,7 @@ public class BinaryCalculator {
 
 
     public void setSecondOperand(Operand operand) {
+
         secondOperand = operand;
 
     }
