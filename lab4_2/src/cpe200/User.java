@@ -7,22 +7,43 @@ public class User {
     public String userName;
     public String password;
 
+    public String userNameForm = "^[a-zA-Z][a-zA-Z0-9]{7,}";
+    public String passwordForm = "(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])[a-zA-Z0-9]{12,}";
+
     public User() {
+
+        userName = "";
+        password = "";
     }
 
+
     public boolean setUserName(String name) {
-        return false;
+        if (name.matches(userNameForm)) {
+            userName = name;
+            return true;
+
+        } else {
+            return false;
+        }
+
     }
 
     public boolean setPassword(String name) {
-        return false;
+        if (name.matches(passwordForm)) {
+            password = name;
+            return true;
+
+        } else {
+
+            return false;
+        }
     }
 
     public String getUserName() {
-        return null;
+        return userName;
     }
 
     public String getPassword() {
-        return null;
+        return password;
     }
 }
