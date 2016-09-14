@@ -38,10 +38,11 @@ public class Users {
     }
 
     /* This method should return null when the user with username is not in the list */
-    public User getUserByUsername(String userName)
-    {
-
-        return null;
+    public User getUserByUsername(String userName) {
+        for(int i=0;i<userList.size();i++){
+            if (userList.get(i).userName.equals(userName)) {
+            }return userList.get(i);
+        }return  new User();
     }
 
     public int count()
@@ -49,9 +50,10 @@ public class Users {
         return userList.size();
     }
 
-    public User[] getUserArray()
-    {
-
-        return null;
+    public User[] getUserArray(){
+        User[] userArray = new User[userList.size()];
+        for(int i=0;i<userList.size();i++){
+            userArray[i] = userList.get(i);
+        }return userArray;
     }
 }
