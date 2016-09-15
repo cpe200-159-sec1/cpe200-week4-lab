@@ -49,6 +49,7 @@ public class BinaryCalculator {
         Double b = Double.parseDouble(secondOperand);
         a = Math.pow(a,b);
         BigDecimal nate = new BigDecimal(a.toString()).stripTrailingZeros();
+        nate = nate.divide(BigDecimal.ONE, 5, BigDecimal.ROUND_HALF_UP).stripTrailingZeros();
         return nate.toString();
     }
 
