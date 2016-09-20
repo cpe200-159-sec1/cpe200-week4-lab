@@ -27,7 +27,7 @@ public class Users {
     public void deleteUser(User user)
     {
         userList.remove(user);
-
+        //-----------
     }
 
     public boolean exists(User user)
